@@ -40,12 +40,15 @@ public class EditarAnotacao extends AppCompatActivity {
         EditText titulo = (EditText) findViewById(R.id.campoTitulo);
         EditText conteudo = (EditText) findViewById(R.id.campoConteudo);
 
+        String textoAtualizacaoBemSucedida = getString(R.string.atualizacaoBemSucedida);
+        String textoAtualizacaoMalSucedida = getString(R.string.atualizacaoMalSucedida);
+
         if (!(titulo.getText().toString().trim().isEmpty())) {
             try {
                 bancoDeDados.atualizaAnotacao(this.getIntent().getIntExtra("id", 0), titulo.getText().toString(), conteudo.getText().toString());
-                Toast.makeText(getApplicationContext(), "Anotação atualizada com sucesso!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), textoAtualizacaoBemSucedida, Toast.LENGTH_LONG).show();
             } catch (Exception ex) {
-                Toast.makeText(getApplicationContext(), "Não foi possível atualizar a anotação, tente novamente.", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), textoAtualizacaoMalSucedida, Toast.LENGTH_LONG).show();
             }
         }
         voltar(v);
@@ -56,12 +59,15 @@ public class EditarAnotacao extends AppCompatActivity {
         EditText titulo = (EditText) findViewById(R.id.campoTitulo);
         EditText conteudo = (EditText) findViewById(R.id.campoConteudo);
 
+        String textoExclusaoBemSucedida = getString(R.string.exclusaoBemSucedida);
+        String textoExclusaoMalSucedida = getString(R.string.exclusaoMalSucedida);
+
         try{
             bancoDeDados.excluiAnotacao(this.getIntent().getIntExtra("id",0));
-            Toast.makeText(getApplicationContext(),"Anotação excluída com sucesso!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), textoExclusaoBemSucedida, Toast.LENGTH_LONG).show();
 
         }catch(Exception ex){
-            Toast.makeText(getApplicationContext(), "Não foi possível excluir a anotação, tente novamente.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), textoExclusaoMalSucedida, Toast.LENGTH_LONG).show();
         }
         voltar(v);
     }

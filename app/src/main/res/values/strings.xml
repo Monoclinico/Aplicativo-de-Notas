@@ -17,4 +17,13 @@
 
     <string name="preencherTitulo">Título da Anotação</string>
     <string name="preencherConteudo">Conteúdo da Anotação</string>
+
+    <!--Toasts-->
+    <string name="criacaoBemSucedida">Anotação criada com sucesso!</string>
+    <string name="criacaoMalSucedida">Infelizmente ocorreu um erro, tente novamente.</string>
+    <string name="atualizacaoBemSucedida">Anotação atualizada com sucesso!</string>
+    <string name="atualizacaoMalSucedida">Não foi possível atualizar a anotação, tente novamente.</string>
+    <string name="exclusaoBemSucedida">Anotação excluída com sucesso!</string>
+    <string name="exclusaoMalSucedida">Não foi possível excluir a anotação, tente novamente.</string>
+    <!--Toast-->
 </resources>

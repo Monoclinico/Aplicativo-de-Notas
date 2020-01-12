@@ -27,14 +27,18 @@ public class CriarAnotacao extends AppCompatActivity {
         EditText titulo = (EditText) findViewById(R.id.campoTitulo);
         EditText conteudo = (EditText) findViewById(R.id.campoConteudo);
 
+
+        String textoCriacaoBemSucedida =  getString(R.string.criacaoBemSucedida);
+        String textoCriacaoMalSucedida =  getString(R.string.criacaoMalSucedida);
+
         if (!(titulo.getText().toString().trim().isEmpty())) {
             boolean resultado = bancoDeDados.criarAnotacao(titulo.getText().toString(), conteudo.getText().toString());
 
             if (resultado) {
-                Toast.makeText(getApplicationContext(), "Anotação criada com sucesso!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), textoCriacaoBemSucedida, Toast.LENGTH_LONG).show();
 
             } else {
-                Toast.makeText(getApplicationContext(), "Infelizmente ocorreu um erro, tente novamente.", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), textoCriacaoMalSucedida, Toast.LENGTH_LONG).show();
             }
         }
 

@@ -86,16 +86,15 @@
             android:onClick="excluirAnotacao"
             android:text="@string/botaoNotas4"
             android:textAlignment="center" />
+        <Button
+            android:id="@+id/botaoCancelar"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="voltar"
+            android:text="@string/botaoNotas3" />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/botaoCancelar"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="voltar"
-        android:text="@string/botaoNotas3" />
-
 
 </LinearLayout>

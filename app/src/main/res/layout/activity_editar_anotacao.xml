@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    android:visibility="visible"
+    android:weightSum="1"
+    tools:context="javamobile.minhasanotacoes.EditarAnotacao"
+    >
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="@string/titulo3"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+        <!--android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"-->
+
+    <TextView
+        android:id="@+id/labelTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/notaLabel1"
+        />
+
+    <EditText
+        android:id="@+id/campoTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:hint="@string/dicaTitulo"
+        />
+
+    <TextView
+        android:id="@+id/labelConteudo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/notaLabel2"
+        />
+
+    <EditText
+        android:id="@+id/campoConteudo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0.75"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="@string/dicaConteudo"
+        android:inputType="textMultiLine" />
+        <!--android:layout_height="wrap_content"-->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <Button
+            android:id="@+id/botaoGravar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/botaoNotas2"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:onClick="atualizarAnotacao"
+            />
+        <Button
+            android:id="@+id/botaoExcluir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/botaoNotas4"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:onClick="excluirAnotacao"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/botaoCancelar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="voltar"
+        android:text="@string/botaoNotas3" />
+
+
+</LinearLayout>

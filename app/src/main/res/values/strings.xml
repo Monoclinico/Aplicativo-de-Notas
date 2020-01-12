@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">MINHAS ANOTAÇÕES</string>
+    <string name="titulo1">Notas</string>
+    <string name="titulo2">Criar Nova Anotação</string>
+    <string name="titulo3">Editar Nota</string>
+    <string name="notaLabel1">Título</string>>
+    <string name="notaLabel2">Conteúdo</string>>
+    <string name="botaoNotas1">Criar nova anotação</string>
+    <string name="botaoNotas2">Criar</string>
+    <string name="botaoNotas3">Cancelar</string>
+    <string name="botaoNotas4">Excluir</string>
+    <string name="dicaTitulo">Escreva o título da sua anotação</string>
+    <string name="dicaConteudo">Escreva o conteúdo da sua anotação</string>
+
+    <string name="numeroAnotacao">ID</string>
+    <string name="tituloAnotacao">TITULO</string>
+
+    <string name="preencherTitulo">Título da Anotação</string>
+    <string name="preencherConteudo">Conteúdo da Anotação</string>
+</resources>

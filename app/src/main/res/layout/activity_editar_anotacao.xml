@@ -25,8 +25,6 @@
         android:textColor="@color/colorWhite"
         android:textSize="24sp"
         android:textStyle="bold" />
-        <!--android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"-->
 
     <TextView
         android:id="@+id/labelTitulo"
@@ -42,7 +40,7 @@
         android:inputType="text"
         android:ems="10"
         android:hint="@string/dicaTitulo"
-        />
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/labelConteudo"
@@ -60,8 +58,8 @@
         android:ems="10"
         android:gravity="top"
         android:hint="@string/dicaConteudo"
-        android:inputType="textMultiLine" />
-        <!--android:layout_height="wrap_content"-->
+        android:inputType="textMultiLine"
+        android:importantForAutofill="no" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -71,27 +69,29 @@
 
         <Button
             android:id="@+id/botaoGravar"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/botaoNotas2"
-            android:textAlignment="center"
             android:layout_weight="1"
             android:onClick="atualizarAnotacao"
-            />
+            android:text="@string/botaoNotas2"
+            android:textAlignment="center" />
+
         <Button
             android:id="@+id/botaoExcluir"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/botaoNotas4"
-            android:textAlignment="center"
             android:layout_weight="1"
             android:onClick="excluirAnotacao"
-            />
+            android:text="@string/botaoNotas4"
+            android:textAlignment="center" />
 
     </LinearLayout>
 
     <Button
         android:id="@+id/botaoCancelar"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="voltar"

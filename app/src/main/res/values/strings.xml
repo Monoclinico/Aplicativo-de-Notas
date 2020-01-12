@@ -2,7 +2,7 @@
     <string name="app_name">MINHAS ANOTAÇÕES</string>
     <string name="titulo1">Notas</string>
     <string name="titulo2">Criar Nova Anotação</string>
-    <string name="titulo3">Editar Nota</string>
+    <string name="titulo3">Editar Anotação</string>
     <string name="notaLabel1">Título</string>>
     <string name="notaLabel2">Conteúdo</string>>
     <string name="botaoNotas1">Criar nova anotação</string>

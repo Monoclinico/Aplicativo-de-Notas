@@ -2,6 +2,7 @@ package javamobile.minhasanotacoes;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.view.Gravity;
 import android.view.View;
 import android.os.Bundle;
 import android.widget.EditText;
@@ -28,8 +29,9 @@ public class CriarAnotacao extends AppCompatActivity {
         EditText conteudo = (EditText) findViewById(R.id.campoConteudo);
 
 
-        String textoCriacaoBemSucedida =  getString(R.string.criacaoBemSucedida);
-        String textoCriacaoMalSucedida =  getString(R.string.criacaoMalSucedida);
+        String textoCriacaoBemSucedida = getString(R.string.criacaoBemSucedida);
+        String textoCriacaoMalSucedida = getString(R.string.criacaoMalSucedida);
+        String textoCriacaoTituloVazio = getString(R.string.criarAnotacaoTituloVazio);
 
         if (!(titulo.getText().toString().trim().isEmpty())) {
             boolean resultado = bancoDeDados.criarAnotacao(titulo.getText().toString(), conteudo.getText().toString());
@@ -40,9 +42,15 @@ public class CriarAnotacao extends AppCompatActivity {
             } else {
                 Toast.makeText(getApplicationContext(), textoCriacaoMalSucedida, Toast.LENGTH_LONG).show();
             }
+
+            voltar(v);
+
+        }else {
+            Toast toast = Toast.makeText(getApplicationContext(), textoCriacaoTituloVazio, Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+            toast.show();
         }
 
-        voltar(v);
 
     }
 }

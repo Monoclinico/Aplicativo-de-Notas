@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -42,6 +43,7 @@ public class EditarAnotacao extends AppCompatActivity {
 
         String textoAtualizacaoBemSucedida = getString(R.string.atualizacaoBemSucedida);
         String textoAtualizacaoMalSucedida = getString(R.string.atualizacaoMalSucedida);
+        String textoAtualizacaoTituloVazio = getString(R.string.atualizarAnotacaoTituloVazio);
 
         if (!(titulo.getText().toString().trim().isEmpty())) {
             try {
@@ -50,8 +52,13 @@ public class EditarAnotacao extends AppCompatActivity {
             } catch (Exception ex) {
                 Toast.makeText(getApplicationContext(), textoAtualizacaoMalSucedida, Toast.LENGTH_LONG).show();
             }
+
+            voltar(v);
+        }else {
+            Toast toast = Toast.makeText(getApplicationContext(), textoAtualizacaoTituloVazio, Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+            toast.show();
         }
-        voltar(v);
     }
 
     public void excluirAnotacao(View v){

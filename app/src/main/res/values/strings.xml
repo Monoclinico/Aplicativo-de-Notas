@@ -25,5 +25,7 @@
     <string name="atualizacaoMalSucedida">Não foi possível atualizar a anotação, tente novamente.</string>
     <string name="exclusaoBemSucedida">Anotação excluída com sucesso!</string>
     <string name="exclusaoMalSucedida">Não foi possível excluir a anotação, tente novamente.</string>
+    <string name="criarAnotacaoTituloVazio">Não foi possível criar a anotação. Adicione um título.</string>
+    <string name="atualizarAnotacaoTituloVazio">Não foi possível atualizar a anotação. Adicione um título.</string>
     <!--Toast-->
 </resources>

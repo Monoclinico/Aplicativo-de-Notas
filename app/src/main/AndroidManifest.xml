@@ -10,8 +10,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditarAnotacao"></activity>
-        <activity android:name=".CriarAnotacao"></activity>
+        <activity
+            android:name=".EditarAnotacao"
+            android:parentActivityName=".TelaInicial">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".TelaInicial"/>
+        </activity>
+        <activity
+            android:name=".CriarAnotacao"
+            android:parentActivityName=".TelaInicial">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".TelaInicial"/>
+        </activity>
         <activity android:name=".TelaInicial">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

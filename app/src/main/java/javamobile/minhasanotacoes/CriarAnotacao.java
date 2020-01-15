@@ -37,7 +37,7 @@ public class CriarAnotacao extends AppCompatActivity {
             boolean resultado = bancoDeDados.criarAnotacao(titulo.getText().toString(), conteudo.getText().toString());
 
             if (resultado) {
-                Toast.makeText(getApplicationContext(), textoCriacaoBemSucedida, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), textoCriacaoBemSucedida, Toast.LENGTH_SHORT).show();
 
             } else {
                 Toast.makeText(getApplicationContext(), textoCriacaoMalSucedida, Toast.LENGTH_LONG).show();

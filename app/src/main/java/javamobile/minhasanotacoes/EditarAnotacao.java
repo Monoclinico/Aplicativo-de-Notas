@@ -48,7 +48,7 @@ public class EditarAnotacao extends AppCompatActivity {
         if (!(titulo.getText().toString().trim().isEmpty())) {
             try {
                 bancoDeDados.atualizaAnotacao(this.getIntent().getIntExtra("id", 0), titulo.getText().toString(), conteudo.getText().toString());
-                Toast.makeText(getApplicationContext(), textoAtualizacaoBemSucedida, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), textoAtualizacaoBemSucedida, Toast.LENGTH_SHORT).show();
             } catch (Exception ex) {
                 Toast.makeText(getApplicationContext(), textoAtualizacaoMalSucedida, Toast.LENGTH_LONG).show();
             }
@@ -71,7 +71,7 @@ public class EditarAnotacao extends AppCompatActivity {
 
         try{
             bancoDeDados.excluiAnotacao(this.getIntent().getIntExtra("id",0));
-            Toast.makeText(getApplicationContext(), textoExclusaoBemSucedida, Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), textoExclusaoBemSucedida, Toast.LENGTH_SHORT).show();
 
         }catch(Exception ex){
             Toast.makeText(getApplicationContext(), textoExclusaoMalSucedida, Toast.LENGTH_LONG).show();

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MINHAS ANOTAÇÕES</string>
+    <string name="app_name">Anotações</string>
     <string name="titulo1">Notas</string>
     <string name="titulo2">Criar Nova Anotação</string>
     <string name="titulo3">Editar Anotação</string>
@@ -9,6 +9,7 @@
     <string name="botaoNotas2">Criar</string>
     <string name="botaoNotas3">Cancelar</string>
     <string name="botaoNotas4">Excluir</string>
+    <string name="botaoNotas5">Salvar</string>
     <string name="dicaTitulo">Escreva o título da sua anotação</string>
     <string name="dicaConteudo">Escreva o conteúdo da sua anotação</string>
 

@@ -5,10 +5,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingTop="16dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="16dp"
+    android:paddingLeft="5dp"
+    android:paddingTop="5dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="5dp"
     android:visibility="visible"
     android:weightSum="1"
     tools:context="javamobile.minhasanotacoes.CriarAnotacao"
@@ -53,12 +53,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="10dp"
-        android:layout_weight="0.75"
+        android:layout_weight="1"
         android:ems="10"
         android:gravity="top"
         android:hint="@string/dicaConteudo"
-        android:inputType="textMultiLine"
-        android:importantForAutofill="no"/>
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -72,8 +72,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:drawableStart="@android:drawable/ic_input_add"
             android:onClick="criarAnotacao"
-            android:text="@string/botaoNotas2" />
+            android:text="@string/botaoNotas2"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/botaoCancelar"
@@ -81,8 +83,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:drawableStart="@android:drawable/ic_menu_close_clear_cancel"
             android:onClick="voltar"
-            android:text="@string/botaoNotas3" />
+            android:text="@string/botaoNotas3"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

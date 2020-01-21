@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_tela_inicial"
     android:layout_width="match_parent"
@@ -13,8 +11,7 @@
     android:paddingRight="5dp"
     android:paddingBottom="5dp"
     android:visibility="visible"
-    tools:context="javamobile.minhasanotacoes.TelaInicial"
-    >
+    tools:context="javamobile.minhasanotacoes.TelaInicial">
 
     <TextView
         android:id="@+id/titulo"
@@ -37,18 +34,28 @@
 
     </ListView>
 
-    <ImageButton
-        android:id="@+id/BotaoCriarAnotacao"
-        style="@style/Widget.AppCompat.ImageButton"
-        android:layout_width="50dip"
-        android:layout_height="50dip"
-        android:layout_gravity="center_horizontal"
+    <LinearLayout
+        android:id="@+id/botoes_da_tela_inicial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:background="@drawable/icone_lapis_redondo_botao"
-        android:contentDescription="@string/botaoNotas1"
-        android:onClick="abrirTelaCriarNovaAnotacao"
-        android:visibility="visible" />
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="0dp"
+        android:visibility="visible"
+        tools:context="javamobile.minhasanotacoes.TelaInicial">
 
+        <ImageButton
+            android:id="@+id/BotaoCriarAnotacao"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:background="@drawable/icone_lapis_redondo_botao"
+            android:contentDescription="@string/botaoNotas1"
+            android:onClick="abrirTelaCriarNovaAnotacao"
+            android:scaleType="center"
+            android:visibility="visible" />
 
+    </LinearLayout>
 </LinearLayout>
 

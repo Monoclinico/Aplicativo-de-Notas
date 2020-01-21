@@ -5,20 +5,18 @@
     android:background="@color/colorWhite"
     android:columnCount="2"
     android:orientation="horizontal"
-    android:paddingBottom="4dp"
+    android:paddingBottom="5dp"
     android:rowCount="2">
 
     <TextView
         android:id="@+id/labelId"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginEnd="2dp"
-        android:background="@color/colorPrimary"
-        android:gravity="center_vertical"
+        android:background="@color/colorWhite"
+        android:gravity="center"
         android:padding="2dp"
         android:text="@string/numeroAnotacao"
-        android:textAlignment="center"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorBlack"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -26,12 +24,13 @@
         android:id="@+id/labelTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:padding="8dp"
+        android:background="@color/colorWhite"
         android:paddingStart="4dp"
-        android:paddingEnd="2dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="8dp"
         android:text="@string/tituloAnotacao"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorBlack"
         android:textSize="18sp"
         android:textStyle="bold" />
 

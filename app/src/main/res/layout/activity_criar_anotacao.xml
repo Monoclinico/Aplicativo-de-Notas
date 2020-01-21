@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingLeft="5dp"
     android:paddingTop="5dp"
     android:paddingRight="5dp"
     android:paddingBottom="5dp"
     android:visibility="visible"
     android:weightSum="1"
-    tools:context="javamobile.minhasanotacoes.CriarAnotacao"
-    >
+    tools:context="javamobile.minhasanotacoes.CriarAnotacao">
 
     <TextView
         android:id="@+id/titulo"
@@ -29,24 +27,22 @@
         android:id="@+id/labelTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/notaLabel1"
-        />
+        android:text="@string/notaLabel1" />
 
     <EditText
         android:id="@+id/campoTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
         android:ems="10"
         android:hint="@string/dicaTitulo"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:inputType="text" />
 
     <TextView
         android:id="@+id/labelConteudo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/notaLabel2"
-        />
+        android:text="@string/notaLabel2" />
 
     <EditText
         android:id="@+id/campoConteudo"
@@ -61,15 +57,14 @@
         android:inputType="textMultiLine" />
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/botaoCriar"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableStart="@android:drawable/ic_input_add"
@@ -80,7 +75,7 @@
         <Button
             android:id="@+id/botaoCancelar"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableStart="@android:drawable/ic_menu_close_clear_cancel"

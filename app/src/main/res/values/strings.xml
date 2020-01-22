@@ -12,6 +12,7 @@
     <string name="botaoNotas5">Salvar</string>
     <string name="dicaTitulo">Escreva o título da sua anotação</string>
     <string name="dicaConteudo">Escreva o conteúdo da sua anotação</string>
+    <string name="dicaSemAnotacao">Não há anotações criadas</string>
 
     <string name="numeroAnotacao">ID</string>
     <string name="tituloAnotacao">TITULO</string>

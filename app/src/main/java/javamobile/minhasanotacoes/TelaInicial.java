@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 import javamobile.minhasanotacoes.bancodedados.BancoDeDados;
 
@@ -25,28 +26,42 @@ public class TelaInicial extends AppCompatActivity {
         //obtém o resultado da query de obterResultados
         final Cursor cursor = bancoDeDados.obterAnotacoes();
 
-        String[] nomeCampos = {"_id","titulo"};
-        int[] idViews = new int[] {R.id.labelId, R.id.labelTitulo};
+        if (cursor.getCount()>0) {
+            String[] nomeCampos = {"_id", "titulo"};
+            int[] idViews = new int[]{R.id.labelId, R.id.labelTitulo};
 
-        //mapeia colunas de um cursor para TextViews ou ImageViews de um elemento xml(modelo_lista)
-        SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(),
-                R.layout.modelo_lista, cursor, nomeCampos, idViews, 0);
+            //mapeia colunas de um cursor para TextViews ou ImageViews de um elemento xml(modelo_lista)
+            SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(),
+                    R.layout.modelo_lista, cursor, nomeCampos, idViews, 0);
 
-        //coloca o objeto adaptador no elemento ListaDeNotas
-        ListView lista = (ListView) findViewById(R.id.ListaDeNotas);
-        lista.setAdapter(adaptador);
+            //coloca o objeto adaptador no elemento ListaDeNotas
 
-        //criar um evento de click para cada um dos elementos da lista
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id ){
-                cursor.moveToPosition(position);
-                Intent intent = new Intent(TelaInicial.this, EditarAnotacao.class);
-                intent.putExtra("id", cursor.getInt(cursor.getColumnIndexOrThrow("_id")));
-                startActivity(intent);
-                finish();
-            }
-        });
+            ListView lista = (ListView) findViewById(R.id.ListaDeNotas);
+            TextView textSemAnotacao = findViewById(R.id.text_sem_anotacao);
+            textSemAnotacao.setVisibility(View.GONE);
+            lista.setVisibility(View.VISIBLE);
+            lista.setAdapter(adaptador);
+
+            //criar um evento de click para cada um dos elementos da lista
+            lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    cursor.moveToPosition(position);
+                    Intent intent = new Intent(TelaInicial.this, EditarAnotacao.class);
+                    intent.putExtra("id", cursor.getInt(cursor.getColumnIndexOrThrow("_id")));
+                    startActivity(intent);
+                    finish();
+                }
+            });
+
+        }else{
+            ListView listListaDeNotas = findViewById(R.id.ListaDeNotas);
+            TextView textSemAnotacao = findViewById(R.id.text_sem_anotacao);
+            listListaDeNotas.setVisibility(View.GONE);
+            textSemAnotacao.setVisibility(View.VISIBLE);
+
+        }
+
     }
 
 

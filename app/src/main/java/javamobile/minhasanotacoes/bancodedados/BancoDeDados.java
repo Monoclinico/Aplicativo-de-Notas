@@ -11,36 +11,44 @@ public class BancoDeDados {
     public GerenciarBanco gerenciarBanco;
 
     public BancoDeDados(Context context){
+        // cria uma instância de GerenciarBanco
         gerenciarBanco = new GerenciarBanco(context);
 
     }
 
     public boolean criarAnotacao(String titulo, String conteudo){
+        //acesso ao banco de dados para escrita
         banco = gerenciarBanco.getWritableDatabase();
 
+        //cria um conjunto vazio de chave/valor usando o tamanho inicial padrão
         ContentValues valores = new ContentValues();
         valores.put("titulo",titulo);
         valores.put("conteudo", conteudo);
 
+        //insere um registro na tabela e retorna um resultado
         long resultado = banco.insert("anotacoes",null, valores);
+
+        //fecha o banco de dados de escrita
         banco.close();
 
         return resultado > 0;
     }
     public Cursor obterAnotacoes(){
-        String[] campos = {"_id","titulo"};
+        String[] colunas = {"_id","titulo"};
+        //acesso ao banco de dados para leitura
         SQLiteDatabase db = gerenciarBanco.getReadableDatabase();
-        Cursor cursor = db.query("anotacoes",campos,null,null,null,null,"titulo ASC");
+        Cursor cursor = db.query("anotacoes",colunas,null,null,null,null,"_id DESC");
 
         if(cursor != null){
-            cursor.moveToFirst();
+            cursor.moveToFirst(); // move o cursor para a primeira linha
         }
 
-        db.close();
-        return cursor;
+        db.close(); // fecha o banco de dados de leitura
+        return cursor; // retorna o resultado
     }
 
     public void atualizaAnotacao(int id, String titulo, String conteudo){
+        //acesso ao banco de dados para leitura
         SQLiteDatabase db = gerenciarBanco.getReadableDatabase();
         String where = "_id = " + id;
 
@@ -62,14 +70,16 @@ public class BancoDeDados {
 
     public Cursor consultarAnotacaoPeloId(int notaId){
         Cursor cursor;
-        String[] campos = {"_id","titulo","conteudo"};
-        String where = "_id = " + notaId;
+        String[] colunas = {"_id","titulo","conteudo"};
+        String where = "_id = " + notaId; //condicao da pesquisa
+
+        //acesso ao banco de dados para leitura
         SQLiteDatabase db = gerenciarBanco.getReadableDatabase();
-        cursor = db.query("anotacoes",campos,where,null,null,null,null,null);
+        cursor = db.query("anotacoes",colunas,where,null,null,null,null,null);
         if (cursor!=null){
-            cursor.moveToFirst();
+            cursor.moveToFirst(); // move o cursor para a primeira linha
         }
-        db.close();
-        return cursor;
+        db.close(); // fecha o banco de dados de leitura
+        return cursor; // retorna o resultado
     }
 }

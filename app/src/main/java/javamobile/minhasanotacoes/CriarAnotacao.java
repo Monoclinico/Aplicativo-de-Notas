@@ -18,12 +18,14 @@ public class CriarAnotacao extends AppCompatActivity {
         setContentView(R.layout.activity_criar_anotacao);
     }
 
+    //metodo para voltar a atividade principal
     public void voltar (View v){
         Intent startNewActivity = new Intent(this, TelaInicial.class);
         startActivity(startNewActivity);
     }
 
     public void criarAnotacao(View v){
+        //retorna o banco de dados
         BancoDeDados bancoDeDados = new BancoDeDados(getBaseContext());
         EditText titulo = (EditText) findViewById(R.id.campoTitulo);
         EditText conteudo = (EditText) findViewById(R.id.campoConteudo);
@@ -34,6 +36,7 @@ public class CriarAnotacao extends AppCompatActivity {
         String textoCriacaoTituloVazio = getString(R.string.criarAnotacaoTituloVazio);
 
         if (!(titulo.getText().toString().trim().isEmpty())) {
+            //cria um nova anotacao
             boolean resultado = bancoDeDados.criarAnotacao(titulo.getText().toString(), conteudo.getText().toString());
 
             if (resultado) {

@@ -19,18 +19,24 @@ public class TelaInicial extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_inicial);
 
+        //cria o banco de dados se necessario e retorna o banco de dados
         BancoDeDados bancoDeDados = new BancoDeDados(getBaseContext());
+
+        //obtém o resultado da query de obterResultados
         final Cursor cursor = bancoDeDados.obterAnotacoes();
 
-        String[] nomeCampos = new String[] {"_id","titulo"};
+        String[] nomeCampos = {"_id","titulo"};
         int[] idViews = new int[] {R.id.labelId, R.id.labelTitulo};
 
+        //mapeia colunas de um cursor para TextViews ou ImageViews de um elemento xml(modelo_lista)
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(),
                 R.layout.modelo_lista, cursor, nomeCampos, idViews, 0);
 
+        //coloca o objeto adaptador no elemento ListaDeNotas
         ListView lista = (ListView) findViewById(R.id.ListaDeNotas);
         lista.setAdapter(adaptador);
 
+        //criar um evento de click para cada um dos elementos da lista
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id ){
@@ -43,7 +49,9 @@ public class TelaInicial extends AppCompatActivity {
         });
     }
 
+
     public void abrirTelaCriarNovaAnotacao(View v){
+        //inicia a atividade de criação de notas
         Intent startNewActivity = new Intent(this, CriarAnotacao.class);
         startActivity(startNewActivity);
     }

@@ -8,18 +8,23 @@ public class GerenciarBanco extends SQLiteOpenHelper{
     public static final int VERSAO = 1;
 
     public GerenciarBanco(Context context){
+        // método construtor
         super(context,NOME_BANCO,null,VERSAO);
 
     }
 
     @Override
     public void onCreate(SQLiteDatabase db){
+        //Chamado quando o banco de dados é criado pela primeira vez.
+        //executa a criação de tabela
         String sql="CREATE TABLE anotacoes (_id integer primary key autoincrement, titulo text, conteudo text)";
         db.execSQL(sql);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
+        //faz um upgrade no banco de dados
+        //Este método é executado dentro de uma transação. Se uma exceção é lançada, todas as alterações serão automaticamente revertidas.
         db.execSQL("DROP TABLE IF EXISTS anotacoes");
         onCreate(db);
     }

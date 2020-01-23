@@ -9,20 +9,6 @@
         android:roundIcon="@mipmap/icones_lapis_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".EditarAnotacao"
-            android:parentActivityName=".TelaInicial">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".TelaInicial" />
-        </activity>
-        <activity
-            android:name=".CriarAnotacao"
-            android:parentActivityName=".TelaInicial">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".TelaInicial" />
-        </activity>
         <activity android:name=".TelaInicial">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".EditarAnotacao" />
+        <activity android:name=".CriarAnotacao" />
     </application>
 
 </manifest>

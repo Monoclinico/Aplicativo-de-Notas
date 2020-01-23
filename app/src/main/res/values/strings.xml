@@ -20,6 +20,7 @@
     <string name="preencherTitulo">Título da Anotação</string>
     <string name="preencherConteudo">Conteúdo da Anotação</string>
 
+    <string name="itens">Itens:</string>
     <!--Toasts-->
     <string name="criacaoBemSucedida">Anotação criada com sucesso!</string>
     <string name="criacaoMalSucedida">Infelizmente ocorreu um erro, tente novamente.</string>

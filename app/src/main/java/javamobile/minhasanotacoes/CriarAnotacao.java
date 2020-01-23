@@ -27,6 +27,7 @@ public class CriarAnotacao extends AppCompatActivity {
     public void criarAnotacao(View v){
         //retorna o banco de dados
         BancoDeDados bancoDeDados = new BancoDeDados(getBaseContext());
+
         EditText titulo = (EditText) findViewById(R.id.campoTitulo);
         EditText conteudo = (EditText) findViewById(R.id.campoConteudo);
 
@@ -53,7 +54,6 @@ public class CriarAnotacao extends AppCompatActivity {
             toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
             toast.show();
         }
-
 
     }
 }

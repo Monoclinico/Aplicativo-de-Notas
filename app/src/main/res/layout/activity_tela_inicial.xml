@@ -13,17 +13,49 @@
     android:visibility="visible"
     tools:context="javamobile.minhasanotacoes.TelaInicial">
 
-    <TextView
-        android:id="@+id/titulo"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:text="@string/titulo1"
-        android:textAlignment="center"
-        android:textColor="@color/colorWhite"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:orientation="horizontal"
+        tools:context="javamobile.minhasanotacoes.TelaInicial">
 
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorTransparent"
+            android:text="@string/titulo1"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/itens"
+            android:textAlignment="textEnd"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_number_itens"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:paddingStart="5dp"
+            android:paddingEnd="0dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/FrameLayoutListaDeNotas"
@@ -53,7 +85,7 @@
 
         </ListView>
 
-        <LinearLayout
+        <!--LinearLayout
             android:id="@+id/botoes_da_tela_inicial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,19 +96,23 @@
             android:visibility="visible"
             tools:context="javamobile.minhasanotacoes.TelaInicial"
             android:layout_margin="10dp"
-            >
+            -->
 
-            <ImageButton
-                android:id="@+id/BotaoCriarAnotacao"
-                style="@style/Widget.AppCompat.ImageButton"
-                android:layout_width="50dip"
-                android:layout_height="50dip"
-                android:background="@drawable/icone_lapis_redondo_botao"
-                android:contentDescription="@string/botaoNotas1"
-                android:onClick="abrirTelaCriarNovaAnotacao"
-                android:visibility="visible" />
+        <ImageButton
+            android:id="@+id/BotaoCriarAnotacao"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="15dp"
+            android:alpha="1"
+            android:background="@drawable/icone_lapis_redondo_botao"
+            android:contentDescription="@string/botaoNotas1"
+            android:onClick="abrirTelaCriarNovaAnotacao"
+            android:padding="0dp"
+            android:visibility="visible" />
 
-        </LinearLayout>
+
     </FrameLayout>
 </LinearLayout>
 

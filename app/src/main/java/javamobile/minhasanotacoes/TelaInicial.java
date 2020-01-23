@@ -25,6 +25,7 @@ public class TelaInicial extends AppCompatActivity {
         //captura os elementos
         mViewHolder.listListaDeNotas = (ListView) findViewById(R.id.ListaDeNotas);
         mViewHolder.textSemAnotacao = (TextView) findViewById(R.id.text_sem_anotacao);
+        mViewHolder.textNumberItens = (TextView) findViewById(R.id.text_number_itens);
         //------------------------------------------------
 
         //cria o banco de dados se necessario e retorna o banco de dados
@@ -32,6 +33,8 @@ public class TelaInicial extends AppCompatActivity {
 
         //obtém o resultado da query de obterResultados
         final Cursor cursor = bancoDeDados.obterAnotacoes();
+
+
 
         if (cursor.getCount()>0) {
             String[] nomeColunas = new String[]{"_id", "titulo"};
@@ -63,6 +66,9 @@ public class TelaInicial extends AppCompatActivity {
             mViewHolder.listListaDeNotas.setVisibility(View.GONE);
             mViewHolder.textSemAnotacao.setVisibility(View.VISIBLE);
         }
+
+        mViewHolder.textNumberItens.setText(String.valueOf(mViewHolder.listListaDeNotas.getCount()));
+
     }
 
     public void abrirTelaCriarNovaAnotacao(View v){
@@ -74,5 +80,6 @@ public class TelaInicial extends AppCompatActivity {
     private static class ViewHolder{
         ListView listListaDeNotas;
         TextView textSemAnotacao;
+        TextView textNumberItens;
     }
 }

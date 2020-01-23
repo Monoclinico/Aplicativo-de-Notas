@@ -27,6 +27,6 @@
         android:text="@string/tituloAnotacao"
         android:textColor="@color/colorBlack"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="normal" />
 
 </LinearLayout>

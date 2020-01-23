@@ -15,10 +15,17 @@ import javamobile.minhasanotacoes.bancodedados.BancoDeDados;
 
 public class TelaInicial extends AppCompatActivity {
 
+    ViewHolder mViewHolder = new ViewHolder();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_inicial);
+
+        //captura os elementos
+        mViewHolder.listListaDeNotas = (ListView) findViewById(R.id.ListaDeNotas);
+        mViewHolder.textSemAnotacao = (TextView) findViewById(R.id.text_sem_anotacao);
+        //------------------------------------------------
 
         //cria o banco de dados se necessario e retorna o banco de dados
         BancoDeDados bancoDeDados = new BancoDeDados(getBaseContext());
@@ -27,23 +34,21 @@ public class TelaInicial extends AppCompatActivity {
         final Cursor cursor = bancoDeDados.obterAnotacoes();
 
         if (cursor.getCount()>0) {
-            String[] nomeCampos = {"_id", "titulo"};
+            String[] nomeColunas = new String[]{"_id", "titulo"};
             int[] idViews = new int[]{R.id.labelId, R.id.labelTitulo};
 
             //mapeia colunas de um cursor para TextViews ou ImageViews de um elemento xml(modelo_lista)
             SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(),
-                    R.layout.modelo_lista, cursor, nomeCampos, idViews, 0);
+                    R.layout.modelo_lista, cursor, nomeColunas, idViews, 0);
+
+            mViewHolder.textSemAnotacao.setVisibility(View.GONE);
+            mViewHolder.listListaDeNotas.setVisibility(View.VISIBLE);
 
             //coloca o objeto adaptador no elemento ListaDeNotas
-
-            ListView lista = (ListView) findViewById(R.id.ListaDeNotas);
-            TextView textSemAnotacao = findViewById(R.id.text_sem_anotacao);
-            textSemAnotacao.setVisibility(View.GONE);
-            lista.setVisibility(View.VISIBLE);
-            lista.setAdapter(adaptador);
+            mViewHolder.listListaDeNotas.setAdapter(adaptador);
 
             //criar um evento de click para cada um dos elementos da lista
-            lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            mViewHolder.listListaDeNotas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     cursor.moveToPosition(position);
@@ -55,19 +60,19 @@ public class TelaInicial extends AppCompatActivity {
             });
 
         }else{
-            ListView listListaDeNotas = findViewById(R.id.ListaDeNotas);
-            TextView textSemAnotacao = findViewById(R.id.text_sem_anotacao);
-            listListaDeNotas.setVisibility(View.GONE);
-            textSemAnotacao.setVisibility(View.VISIBLE);
-
+            mViewHolder.listListaDeNotas.setVisibility(View.GONE);
+            mViewHolder.textSemAnotacao.setVisibility(View.VISIBLE);
         }
-
     }
-
 
     public void abrirTelaCriarNovaAnotacao(View v){
         //inicia a atividade de criação de notas
         Intent startNewActivity = new Intent(this, CriarAnotacao.class);
         startActivity(startNewActivity);
+    }
+
+    private static class ViewHolder{
+        ListView listListaDeNotas;
+        TextView textSemAnotacao;
     }
 }
